@@ -119,7 +119,6 @@ const AddProduct = () => {
                         />
                     </div>
                     {error && !company && <span className="invalid-input"> Enter Valid Company </span>}
-
                     <input
                         type="file"
                         name="file"
