@@ -18,7 +18,7 @@ const SingleProduct = () => {
     }, []);
 
     const getProductDertails = async () => {
-        let result = await fetch( `${live_url}/${params.id}` );
+        let result = await fetch( `${live_url}/product/${params.id}` );
         result = await result.json();
         setName(result.name);
         setPrice(result.price);
