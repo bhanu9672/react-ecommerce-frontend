@@ -4,7 +4,7 @@ import { Table, Label, TextInput, Card } from 'flowbite-react';
 
 const ProductLists = () => {
     const [products, setProducts] = useState([]);
-    
+
     const local_url = "http://localhost:5000";
     const live_url = "https://node-ecommerce-backend.vercel.app";
     useEffect(() => {
@@ -56,14 +56,14 @@ const ProductLists = () => {
     console.log(products)
 
     const getProducts = async () => {
-        let result = await fetch( `${live_url}/products` );
+        let result = await fetch(`${live_url}/products`);
         result = await result.json();
         setProducts(result);
     }
 
     const deteleProduct = async (id) => {
         console.log(id)
-        let result = await fetch( `${live_url}/product/${id}`, {
+        let result = await fetch(`${live_url}/product/${id}`, {
             method: "Delete"
         });
         result = await result.json();

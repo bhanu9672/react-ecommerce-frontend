@@ -5,11 +5,6 @@ import { Navbar, Button } from 'flowbite-react';
 
 const Nav = () => {
     const auth = localStorage.getItem('user');
-    const navigate = useNavigate();
-    const LogOut = () => {
-        localStorage.clear();
-        navigate("/login")
-    }
     return (
         <>
             <Navbar className='mb-10 bg-gray-50 text-gray-600' fluid rounded>

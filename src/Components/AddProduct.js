@@ -29,7 +29,7 @@ const AddProduct = () => {
     const HandleAddProduct = async (e) => {
         e.preventDefault();
         console.log(picture.pictureAsFile)
-        if (!name || !price || !category || !company || picture.pictureAsFile == undefined ) {
+        if (!name || !price || !category || !company || picture.pictureAsFile == undefined) {
             setError(true);
             return false;
         }
