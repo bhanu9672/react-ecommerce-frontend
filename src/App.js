@@ -1,6 +1,10 @@
 import './App.css';
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
 
+import Home from './pages/Home';
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
+
 import Nav from "./Components/Nav";
 import Footer from './Components/Footer';
 
@@ -15,9 +19,6 @@ import Checkout from './Components/Checkout';
 import Profile from './Components/Profile';
 
 
-import Home from './pages/Home';
-import Login from './pages/Login';
-import SignUp from './pages/SignUp';
 
 
 function App() {
