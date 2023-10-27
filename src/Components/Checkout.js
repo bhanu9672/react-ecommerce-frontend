@@ -171,7 +171,7 @@ const Checkout = () => {
                 </div>
                 <div className="col-span-1 bg-white lg:block hidden">
                     <h1 className="py-6 border-b-2 text-xl text-gray-600 px-8">
-                        Order Summary
+                    Order Summary
                     </h1>
                     <ul className="py-6 border-b space-y-6 px-8">
                         <li className="grid grid-cols-6 gap-2 border-b-1">
