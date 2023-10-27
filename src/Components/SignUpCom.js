@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button, Checkbox, Label, TextInput, Card } from 'flowbite-react';
 
-const SignUp = () => {
+const SignUpCom = () => {
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -13,12 +13,12 @@ const SignUp = () => {
     const local_url = "http://localhost:5000";
     const live_url = "https://node-ecommerce-backend.vercel.app";
 
-    useEffect(() => {
-        const auth = localStorage.getItem("user");
-        if (auth) {
-            navigate("/");
-        }
-    }, []);
+    // useEffect(() => {
+    //     const auth = localStorage.getItem("user");
+    //     if (auth) {
+    //         navigate("/login");
+    //     }
+    // }, []);
 
     const collectData = async () => {
         console.log("Btn Click Now.");
@@ -43,8 +43,10 @@ const SignUp = () => {
         <>
             <div className="w-2/4 m-auto">
                 <Card>
+                    <h1 className="text-center text-2xl font-bold font-mono">
+                        Create a new account
+                    </h1>
                     <form className="flex flex-col gap-4">
-
                         <div>
                             <div className="mb-2 block">
                                 <Label
@@ -59,7 +61,7 @@ const SignUp = () => {
                                 onChange={(e) => setName(e.target.value)}
                             />
                         </div>
-                        {error && !name && <span className="invalid-input"> Enter Valid Email </span>}
+                        {error && !name && <span className="text-rose-500"> Enter Valid Email </span>}
                         <div>
                             <div className="mb-2 block">
                                 <Label
@@ -74,7 +76,7 @@ const SignUp = () => {
                                 onChange={(e) => setEmail(e.target.value)}
                             />
                         </div>
-                        {error && !email && <span className="invalid-input"> Enter Valid Email </span>}
+                        {error && !email && <span className="invalid-inpu text-rose-500"> Enter Valid Email </span>}
                         <div>
                             <div className="mb-2 block">
                                 <Label
@@ -89,10 +91,13 @@ const SignUp = () => {
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                         </div>
-                        {error && !password && <span className="invalid-input"> Enter Valid Password </span>}
+                        {error && !password && <span className="text-rose-500"> Enter Valid Password </span>}
                         <Button onClick={collectData}>
                             Register new account
                         </Button>
+                        <Link to="/login" className="text-center text-blue-600/100">
+                            Already have an account?
+                        </Link>
                     </form>
                 </Card>
             </div>
@@ -100,4 +105,4 @@ const SignUp = () => {
     )
 }
 
-export default SignUp;
+export default SignUpCom;

@@ -67,7 +67,7 @@ const UpdateProduct = () => {
                             onChange={(e) => { setName(e.target.value) }}
                         />
                     </div>
-                    {error && !name && <span className="invalid-input"> Enter Valid Name </span>}
+                    {error && !name && <span className="text-rose-500"> Enter Valid Name </span>}
                     <div>
                         <div className="mb-2 block">
                             <Label
@@ -81,7 +81,7 @@ const UpdateProduct = () => {
                             onChange={(e) => { setPrice(e.target.value) }}
                         />
                     </div>
-                    {error && !price && <span className="invalid-input"> Enter Valid Price </span>}
+                    {error && !price && <span className="text-rose-500"> Enter Valid Price </span>}
                     <div>
                         <div className="mb-2 block">
                             <Label
@@ -95,7 +95,7 @@ const UpdateProduct = () => {
                             onChange={(e) => { setCategory(e.target.value) }}
                         />
                     </div>
-                    {error && !category && <span className="invalid-input"> Enter Valid Category </span>}
+                    {error && !category && <span className="text-rose-500"> Enter Valid Category </span>}
                     <div>
                         <div className="mb-2 block">
                             <Label
@@ -109,7 +109,7 @@ const UpdateProduct = () => {
                             onChange={(e) => { setCompany(e.target.value) }}
                         />
                     </div>
-                    {error && !company && <span className="invalid-input"> Enter Valid Company </span>}
+                    {error && !company && <span className="text-rose-500"> Enter Valid Company </span>}
                     <Button onClick={UpdateProductFun}>
                         Update Product
                     </Button>

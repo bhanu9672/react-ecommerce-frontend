@@ -9,12 +9,10 @@ const Profile = () => {
         navigate("/login")
     }
     return (
-        <div>
-            <div className='text-center'>
-                <Link to="/login" onClick={LogOut}>
-                    LogOut ( {JSON.parse(auth).name} )
-                </Link>
-            </div>
+        <div className='text-center'>
+            <Link to="/login" onClick={LogOut}>
+                LogOut ( {auth && JSON.parse(auth).name} )
+            </Link>
         </div>
     )
 }

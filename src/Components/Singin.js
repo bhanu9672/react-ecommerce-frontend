@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 import { Button, Checkbox, Label, TextInput, Card } from 'flowbite-react';
 
-const Login = () => {
+const Singin = () => {
     const [error, setError] = useState(false);
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
@@ -11,19 +11,19 @@ const Login = () => {
     const local_url = "http://localhost:5000";
     const live_url = "https://node-ecommerce-backend.vercel.app";
 
-    useEffect(() => {
-        const auth = localStorage.getItem("user");
-        if (auth) {
-            navigate("/");
-        }
-    })
+    // useEffect(() => {
+    //     const auth = localStorage.getItem("user");
+    //     if (auth) {
+    //         navigate("/login");
+    //     }
+    // })
 
     const handleLogin = async () => {
         if (!email || !password) {
             setError(true);
             return false;
         }
-        let result = await fetch( `${live_url}/login` , {
+        let result = await fetch(`${live_url}/login`, {
             method: "post",
             body: JSON.stringify({ email, password }),
             headers: {
@@ -44,6 +44,9 @@ const Login = () => {
         <>
             <div className="w-2/4 m-auto">
                 <Card>
+                    <h1 className="text-center text-2xl font-bold font-mono">
+                        Login
+                    </h1>
                     <form className="flex flex-col gap-4">
                         <div>
                             <div className="mb-2 block">
@@ -59,7 +62,7 @@ const Login = () => {
                                 onChange={(e) => setEmail(e.target.value)}
                             />
                         </div>
-                        {error && !email && <span className="invalid-input"> Enter Valid Email </span>}
+                        {error && !email && <span className="text-rose-500"> Enter Valid Email </span>}
                         <div>
                             <div className="mb-2 block">
                                 <Label
@@ -74,10 +77,16 @@ const Login = () => {
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                         </div>
-                        {error && !password && <span className="invalid-input"> Enter Valid Password </span>}
+                        {error && !password && <span className="text-rose-500"> Enter Valid Password </span>}
                         <Button onClick={handleLogin}>
                             Login
                         </Button>
+                        <p className='text-center'>
+                            Don't have an account?
+                            <Link to="/signup" className="text-center text-blue-600/100 px-1">
+                                Request here.
+                            </Link>
+                        </p>
                     </form>
                 </Card>
             </div>
@@ -85,4 +94,4 @@ const Login = () => {
     )
 }
 
-export default Login;
+export default Singin;

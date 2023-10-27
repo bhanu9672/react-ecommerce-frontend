@@ -76,7 +76,7 @@ const AddProduct = () => {
                             onChange={(e) => { setName(e.target.value) }}
                         />
                     </div>
-                    {error && !name && <span className="invalid-input"> Enter Valid Name </span>}
+                    {error && !name && <span className="invalid-input text-rose-500"> Enter Valid Name </span>}
                     <div>
                         <div className="mb-2 block">
                             <Label
@@ -90,7 +90,7 @@ const AddProduct = () => {
                             onChange={(e) => { setPrice(e.target.value) }}
                         />
                     </div>
-                    {error && !price && <span className="invalid-input"> Enter Valid Price </span>}
+                    {error && !price && <span className="invalid-input text-rose-500"> Enter Valid Price </span>}
                     <div>
                         <div className="mb-2 block">
                             <Label
@@ -104,7 +104,7 @@ const AddProduct = () => {
                             onChange={(e) => { setCategory(e.target.value) }}
                         />
                     </div>
-                    {error && !category && <span className="invalid-input"> Enter Valid Category </span>}
+                    {error && !category && <span className="invalid-input text-rose-500"> Enter Valid Category </span>}
                     <div>
                         <div className="mb-2 block">
                             <Label
@@ -118,7 +118,7 @@ const AddProduct = () => {
                             onChange={(e) => { setCompany(e.target.value) }}
                         />
                     </div>
-                    {error && !company && <span className="invalid-input"> Enter Valid Company </span>}
+                    {error && !company && <span className="invalid-input text-rose-500"> Enter Valid Company </span>}
                     <input
                         type="file"
                         name="file"
@@ -126,7 +126,7 @@ const AddProduct = () => {
                         accept=".png, .jpg, .jpeg"
                         className="inputBox"
                     />
-                    {error && picture.pictureAsFile == undefined && <div className="invalid-input"> please, upload image </div>}
+                    {error && picture.pictureAsFile == undefined && <div className="invalid-input text-rose-500"> please, upload image </div>}
                     <Button type="submit">
                         Add Product
                     </Button>
