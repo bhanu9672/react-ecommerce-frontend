@@ -221,8 +221,8 @@ const [open, setOpen] = useState(true)
                                     </div>
                                 </div>
                                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                                    <Link
-                                        to="/cart"
+                                    <button
+                                        onClick={ () => setOpen(true) }
                                         className="relative flex rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                                     >
                                         <svg class="flex-1 w-8 h-8 fill-current pt-2" viewbox="0 0 24 24" >
@@ -230,7 +230,7 @@ const [open, setOpen] = useState(true)
                                         </svg>
                                         <span class="absolute right-0 top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center">5
                                         </span>
-                                    </Link>
+                                    </button>
                                     {/* Profile dropdown */}
                                     <Menu as="div" className="relative ml-3">
                                         <div>
