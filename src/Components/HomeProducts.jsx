@@ -35,9 +35,6 @@ const HomeProducts = () => {
                                 <div className="flex w-full items-center justify-center bg-gray-100 text-xs uppercase transition group-hover:bg-emerald-600 group-hover:text-white">
                                     Add
                                 </div>
-                                <div className="flex items-center justify-center bg-gray-200 px-5 transition group-hover:bg-emerald-500 group-hover:text-white">
-                                    +
-                                </div>
                             </button>
                         </article>
                         <article className="relative flex flex-col overflow-hidden rounded-lg border">
