@@ -47,7 +47,7 @@ const Nav = () => {
         localStorage.clear();
         navigate("/login")
     }
-const [open, setOpen] = useState(true)
+const [open, setOpen] = useState(false)
     return (
         <div className="pb-10">
 
