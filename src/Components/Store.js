@@ -107,7 +107,7 @@ const Store = () => {
 				<h1 className="font-bold text-4xl mb-4">Our Feature Product</h1>
 				<TextInput
 					color="gray"
-					className="pb-10 w-1/4 m-auto"
+					className="pb-10 w-2/4 m-auto"
 					placeholder="Enter Search Product"
 					onChange={searchHandle}
 				/>
