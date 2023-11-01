@@ -4,10 +4,10 @@ import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import Home from './pages/Home';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
+import Wishlist from './pages/Wishlist';
 
 import Nav from "./Components/Nav";
 import Footer from './Components/Footer';
-
 
 import AddProduct from './Components/AddProduct';
 import ProductLists from "./Components/ProductLists";
@@ -18,9 +18,6 @@ import Cart from './Components/Cart';
 import Checkout from './Components/Checkout';
 import Profile from './Components/Profile';
 
-
-
-
 function App() {
 	return (
 		<>
@@ -30,6 +27,7 @@ function App() {
 					<Route path='/' element={<Home />} />
 					<Route path='/productLists' element={<ProductLists />} />
 					<Route path='/store' element={<Store />} />
+					<Route path='/wishlist' element={<Wishlist />} />
 					<Route path='/product/:id' element={<SingleProduct />} />
 					<Route path='/update/:id' element={<UpdateProduct />} />
 					<Route path='/cart' element={<Cart />} />

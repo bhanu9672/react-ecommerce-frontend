@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
-import { Table, Label, TextInput, Card } from 'flowbite-react';
+import { TextInput } from 'flowbite-react';
 
 const Store = () => {
+
 	const [products, setProducts] = useState([]);
 	const local_url = "http://localhost:5000";
 	const live_url = "https://node-ecommerce-backend.vercel.app";
