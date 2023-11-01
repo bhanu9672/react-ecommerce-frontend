@@ -84,7 +84,7 @@ const Singin = () => {
                         <p className='text-center'>
                             Don't have an account?
                             <Link to="/signup" className="text-center text-blue-600/100 px-1">
-                                Request here.
+                                Register now.
                             </Link>
                         </p>
                     </form>

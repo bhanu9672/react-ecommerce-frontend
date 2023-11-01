@@ -17,6 +17,7 @@ import SingleProduct from './Components/SingleProduct';
 import Cart from './Components/Cart';
 import Checkout from './Components/Checkout';
 import Profile from './Components/Profile';
+import Order from './Components/Order';
 
 function App() {
 	return (
@@ -36,6 +37,7 @@ function App() {
 					<Route path='/profile' element={<Profile />} />
 					<Route path='/signup' element={<SignUp />} />
 					<Route path='/login' element={<Login />} />
+					<Route path='/order/:id' element={<Order />} />
 				</Routes>
 			</BrowserRouter>
 			<Footer />

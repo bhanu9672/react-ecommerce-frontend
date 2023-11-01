@@ -96,7 +96,7 @@ const SignUpCom = () => {
                             Register new account
                         </Button>
                         <Link to="/login" className="text-center text-blue-600/100">
-                            Already have an account?
+                            Already have an account? Login now.
                         </Link>
                     </form>
                 </Card>
