@@ -11,7 +11,7 @@ const Profile = () => {
     return (
         <div className='text-center'>
             <div className="mx-auto grid grid-cols-12 gap-4 bg-zinc-50 p-1">
-                <div className="col-span-12 rounded-lg border border-gray-400 bg-gray-200 p-16 sm:col-span-4">
+                <div className="col-span-12 rounded-lg border border-gray-400 bg-gray-200 p-10 sm:col-span-4">
                     {/* Sidebar */}
                     My Account
                     <div className="w-80 text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
