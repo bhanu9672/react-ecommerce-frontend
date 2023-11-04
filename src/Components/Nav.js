@@ -50,7 +50,7 @@ const Nav = () => {
 	}
 	const [open, setOpen] = useState(false)
 	return (
-		<div className="pb-10">
+		<div className="pb-10 md:pb-28">
 
 			<Transition.Root show={open} as={Fragment}>
 				<Dialog as="div" className="relative z-10" onClose={setOpen}>
