@@ -104,7 +104,7 @@ const Store = () => {
 
 	return (
 		<>
-			<div className="text-center p-10">
+			<div className="text-center">
 				<h1 className="font-bold text-4xl mb-4">Our Feature Product</h1>
 				<TextInput
 					color="gray"
