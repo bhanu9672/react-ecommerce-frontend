@@ -1,4 +1,5 @@
 import './App.css';
+import 'react-tabs/style/react-tabs.css';
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
 
 import Home from './pages/Home';
@@ -18,6 +19,8 @@ import Cart from './Components/Cart';
 import Checkout from './Components/Checkout';
 import Profile from './Components/Profile';
 import Order from './Components/Order';
+import Contact from './pages/Contact';
+import Brands from './Components/Brands';
 
 function App() {
 	return (
@@ -38,8 +41,10 @@ function App() {
 					<Route path='/signup' element={<SignUp />} />
 					<Route path='/login' element={<Login />} />
 					<Route path='/order/:id' element={<Order />} />
+					<Route path='/contact' element={<Contact />} />
 				</Routes>
 			</BrowserRouter>
+			<Brands />
 			<Footer />
 		</>
 	);
