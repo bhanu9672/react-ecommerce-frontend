@@ -76,7 +76,7 @@ const SingleProduct = () => {
                                     <span className="font-bold text-gray-700 dark:text-gray-300">
                                         Availability:
                                     </span>
-                                    <span className="text-gray-600 dark:text-gray-300">In Stock</span>
+                                    <span className="text-white-600 bg-green-600 rounded-full px-4 p-2 rounded ">In Stock</span>
                                 </div>
                             </div>
                             <div className="mb-4">
