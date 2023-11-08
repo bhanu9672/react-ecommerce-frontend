@@ -73,10 +73,10 @@ const SingleProduct = () => {
                                         </span>
                                 </div>
                                 <div>
-                                    <span className="font-bold text-gray-700 dark:text-gray-300">
+                                    <span className="font-bold text-white-700 dark:text-gray-300 mr-3">
                                         Availability:
                                     </span>
-                                    <span className="text-white-600 bg-green-600 rounded-full px-4 p-2 rounded mr-3"> 
+                                    <span className="text-white-600 bg-green-600 rounded-full px-4 p-2 rounded"> 
 In Stock
 <span className="rounded-full px-4 bg-white text-bkack p-2 rounded"> 2 </span>
 </span>
