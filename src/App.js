@@ -21,6 +21,8 @@ import Profile from './Components/Profile';
 import Order from './Components/Order';
 import Contact from './pages/Contact';
 import Brands from './Components/Brands';
+import Faq from './Components/Faq';
+import Category from './Components/Category';
 
 function App() {
 	return (
@@ -42,6 +44,8 @@ function App() {
 					<Route path='/login' element={<Login />} />
 					<Route path='/order/:id' element={<Order />} />
 					<Route path='/contact' element={<Contact />} />
+					<Route path='/faq' element={ <Faq /> } />
+					<Route path='/Category' element={ <Category /> } />
 				</Routes>
 			</BrowserRouter>
 			<Brands />

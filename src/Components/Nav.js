@@ -37,6 +37,8 @@ const navigation = [
 	{ name: 'Store', href: '/store', current: false },
 	{ name: 'Add Products', href: '/add', current: false },
 	{ name: 'Contact', href: '/contact', current: false },
+	{ name: 'Faq', href: '/faq', current: false },
+	{ name: 'Category', href: '/category', current: false },
 ];
 
 function classNames(...classes) {

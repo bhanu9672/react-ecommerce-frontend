@@ -1,6 +1,10 @@
 import React from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { Link, useNavigate } from "react-router-dom";
+import Wishlist from '../pages/Wishlist';
+import { BsReverseLayoutTextSidebarReverse, BsChatHeartFill } from "react-icons/bs";
+import { FaReplyAll, FaBuffer, FaCircleUser } from "react-icons/fa6";
+import { HiPhoneArrowDownLeft } from "react-icons/hi2";
 
 const Profile = () => {
     const auth = localStorage.getItem('user');
@@ -11,162 +15,208 @@ const Profile = () => {
     }
     return (
         <Tabs>
-            <div className='text-center'>
+            <div>
                 <div className="mx-auto grid grid-cols-12 gap-4 bg-zinc-50 p-1">
-                    <div className="col-span-12 rounded-lg border border-gray-400 bg-gray-200 p-10 sm:col-span-4">
+                    <div className="col-span-12 rounded-lg border border-gray-400 bg-gray-200 p-10 sm:col-span-3">
                         {/* Sidebar */}
-                        My Account
                         <div className="w-80 text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                             <TabList>
                                 <Tab
                                     className="relative inline-flex items-center w-full px-4 py-4 text-sm font-medium border-b border-gray-200 rounded-t-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
                                 >
-                                    <svg
+                                    <FaCircleUser
                                         className="w-3 h-3 mr-2.5"
-                                        aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="currentColor"
-                                        viewBox="0 0 20 20"
-                                    >
-                                        <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z" />
-                                    </svg>
+                                    />
                                     Profile
                                 </Tab>
                                 <Tab
                                     className="relative inline-flex items-center w-full px-4 py-4 text-sm font-medium border-b border-gray-200 rounded-t-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
                                 >
-                                    <svg
+                                    <FaBuffer
                                         className="w-3 h-3 mr-2.5"
-                                        aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 20 20"
-                                    >
-                                        <path
-                                            stroke="currentColor"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M7.75 4H19M7.75 4a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 4h2.25m13.5 6H19m-2.25 0a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 10h11.25m-4.5 6H19M7.75 16a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 16h2.25"
-                                        />
-                                    </svg>
-                                    Orders
+                                    />
+                                    Change Password
                                 </Tab>
                                 <Tab
                                     className="relative inline-flex items-center w-full px-4 py-4 text-sm font-medium border-b border-gray-200 rounded-t-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
                                 >
-                                    <svg
+                                    <BsReverseLayoutTextSidebarReverse
                                         className="w-3 h-3 mr-2.5"
-                                        aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="currentColor"
-                                        viewBox="0 0 20 20"
-                                    >
-                                        <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z" />
-                                    </svg>
-                                    Manage address
+                                    />
+                                    My Orders
                                 </Tab>
                                 <Tab
                                     className="relative inline-flex items-center w-full px-4 py-4 text-sm font-medium border-b border-gray-200 rounded-t-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
                                 >
-                                    <svg
+                                    <BsChatHeartFill
                                         className="w-3 h-3 mr-2.5"
-                                        aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="currentColor"
-                                        viewBox="0 0 20 20"
-                                    >
-                                        <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z" />
-                                    </svg>
+                                    />
                                     My Wishlist
                                 </Tab>
-                                <Tab
-                                    className="relative inline-flex items-center w-full px-4 py-4 text-sm font-medium border-b border-gray-200 rounded-t-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
-                                >
-                                    <svg
-                                        className="w-3 h-3 mr-2.5"
-                                        aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="currentColor"
-                                        viewBox="0 0 20 20"
-                                    >
-                                        <path d="M14.707 7.793a1 1 0 0 0-1.414 0L11 10.086V1.5a1 1 0 0 0-2 0v8.586L6.707 7.793a1 1 0 1 0-1.414 1.414l4 4a1 1 0 0 0 1.416 0l4-4a1 1 0 0 0-.002-1.414Z" />
-                                        <path d="M18 12h-2.55l-2.975 2.975a3.5 3.5 0 0 1-4.95 0L4.55 12H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2Zm-3 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" />
-                                    </svg>
-                                    Payment Method
-                                </Tab>
                             </TabList>
+                            <Link
+                                className="relative inline-flex items-center w-full px-4 py-4 text-sm font-medium border-b border-gray-200 rounded-t-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
+                                to="/faq"
+                            >
+                                <HiPhoneArrowDownLeft
+                                    className="w-3 h-3 mr-2.5"
+                                />
+                                Need Help
+                            </Link>
                             <Link
                                 className="relative inline-flex items-center w-full px-4 py-4 text-sm font-medium rounded-b-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
                                 to="/login"
                                 onClick={LogOut}
                             >
-                                <svg
+                                <FaReplyAll
                                     className="w-3 h-3 mr-2.5"
-                                    aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                >
-                                    <path d="M14.707 7.793a1 1 0 0 0-1.414 0L11 10.086V1.5a1 1 0 0 0-2 0v8.586L6.707 7.793a1 1 0 1 0-1.414 1.414l4 4a1 1 0 0 0 1.416 0l4-4a1 1 0 0 0-.002-1.414Z" />
-                                    <path d="M18 12h-2.55l-2.975 2.975a3.5 3.5 0 0 1-4.95 0L4.55 12H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2Zm-3 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" />
-                                </svg>
+                                />
                                 LogOut ( {auth && JSON.parse(auth).name} )
                             </Link>
                         </div>
                     </div>
-                    <div className="col-span-12 rounded-lg border border-gray-500 bg-gray-200 p-1 sm:col-span-8">
+                    <div className="col-span-12 rounded-lg border border-gray-500 bg-gray-200 p-1 sm:col-span-9">
                         {/* Main Content */}
                         <TabPanel>
-                            <>
-                                <div className="flex items-center h-screen w-full justify-center">
-                                    <div className="max-w-xs">
-                                        <div className="bg-white shadow-xl rounded-lg py-3">
-                                            <div className="photo-wrapper p-2">
-                                                <img
-                                                    className="w-32 h-32 rounded-full mx-auto"
-                                                    src="https://www.gravatar.com/avatar/2acfb745ecf9d4dccb3364752d17f65f?s=260&d=mp"
-                                                    alt="John Doe"
-                                                />
-                                            </div>
-                                            <div className="p-2">
-                                                <h3 className="text-center text-xl text-gray-900 font-medium leading-8">
-                                                    Joh Doe
-                                                </h3>
-                                                <div className="text-center text-gray-400 text-xs font-semibold">
-                                                    <p>Web Developer</p>
-                                                </div>
-                                                <table className="text-xs my-3">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td className="px-2 py-2 text-gray-500 font-semibold">
-                                                                Address
-                                                            </td>
-                                                            <td className="px-2 py-2">Chatakpur-3, Dhangadhi Kailali</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td className="px-2 py-2 text-gray-500 font-semibold">Phone</td>
-                                                            <td className="px-2 py-2">+977 9955221114</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td className="px-2 py-2 text-gray-500 font-semibold">Email</td>
-                                                            <td className="px-2 py-2">john@exmaple.com</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                                <div className="text-center my-3">
-                                                    <a
-                                                        className="text-xs text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium"
-                                                        href="#"
-                                                    >
-                                                        View Profile
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
+                            <div className="w-6/12 m-10 m-auto bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+                                <form className="space-y-6" action="#">
+                                    <h5 className="text-xl font-medium text-gray-900 dark:text-white">
+                                        Account Details
+                                    </h5>
+                                    <div>
+                                        <label
+                                            htmlFor="name"
+                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                        >
+                                            Full Name
+                                        </label>
+                                        <input
+                                            type="text"
+                                            name="name"
+                                            id="name"
+                                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                            required=""
+                                        />
                                     </div>
-                                </div>
-                            </>
+                                    <div>
+                                        <label
+                                            htmlFor="bio"
+                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                        >
+                                            Bio
+                                        </label>
+                                        <textarea
+                                            type="text"
+                                            name="bio"
+                                            id="bio"
+                                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                            required=""
+                                        >
+                                        </textarea>
+                                    </div>
+                                    <div>
+                                        <label
+                                            htmlFor="email"
+                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                        >
+                                            Email
+                                        </label>
+                                        <input
+                                            type="text"
+                                            name="email"
+                                            id="email"
+                                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                            required=""
+                                        />
+                                    </div>
+                                    <div>
+                                        <label
+                                            htmlFor="phone"
+                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                        >
+                                            Contact Number
+                                        </label>
+                                        <input
+                                            type="number"
+                                            name="phone"
+                                            id="phone"
+                                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                            required=""
+                                        />
+                                    </div>
+
+                                    <button
+                                        type="submit"
+                                        className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                                    >
+                                        Submit
+                                    </button>
+                                </form>
+                            </div>
+                        </TabPanel>
+                        <TabPanel>
+                            <div className="w-6/12 m-10 m-auto bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+                                <form className="space-y-6" action="#">
+                                    <h5 className="text-xl font-medium text-gray-900 dark:text-white">
+                                        Change Password
+                                    </h5>
+                                    <div>
+                                        <label
+                                            htmlFor="email"
+                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                        >
+                                            Old Password
+                                        </label>
+                                        <input
+                                            type="text"
+                                            name="email"
+                                            id="email"
+                                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                            placeholder="Old Password"
+                                            required=""
+                                        />
+                                    </div>
+                                    <div>
+                                        <label
+                                            htmlFor="password"
+                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                        >
+                                            New Password
+                                        </label>
+                                        <input
+                                            type="text"
+                                            name="password"
+                                            id="password"
+                                            placeholder="New Password"
+                                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                            required=""
+                                        />
+                                    </div>
+                                    <div>
+                                        <label
+                                            htmlFor="password"
+                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                        >
+                                            Confirm Password
+                                        </label>
+                                        <input
+                                            type="text"
+                                            name="password"
+                                            id="password"
+                                            placeholder="Confirm Password"
+                                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                            required=""
+                                        />
+                                    </div>
+
+                                    <button
+                                        type="submit"
+                                        className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                                    >
+                                        Change password
+                                    </button>
+                                </form>
+                            </div>
                         </TabPanel>
                         <TabPanel>
                             <div className="container mx-auto px-4 sm:px-8">
@@ -566,13 +616,7 @@ const Profile = () => {
                             </div>
                         </TabPanel>
                         <TabPanel>
-                            Manage address
-                        </TabPanel>
-                        <TabPanel>
-                            My Wishlist
-                        </TabPanel>
-                        <TabPanel>
-                            Payment Method
+                            <Wishlist />
                         </TabPanel>
                     </div>
                 </div>
