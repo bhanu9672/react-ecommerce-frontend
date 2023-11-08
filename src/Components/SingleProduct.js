@@ -32,7 +32,7 @@ const SingleProduct = () => {
     return (
         <>
             <div className="bg-gray-100 dark:bg-gray-800 py-8">
-                <div className="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8 shadow bg-white border border-gray-200 rounded-lg">
+                <div className="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8 shadow bg-white border border-gray-200 rounded-lg mb-10">
                     <div className="flex flex-col md:flex-row -mx-4">
                         <div className="md:flex-1 px-4">
                             <div className="h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
