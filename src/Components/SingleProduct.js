@@ -76,9 +76,10 @@ const SingleProduct = () => {
                                     <span className="font-bold text-gray-700 dark:text-gray-300">
                                         Availability:
                                     </span>
-                                    <span className="text-white-600 bg-green-600 rounded-full px-4 p-2 rounded mr-2"> 
+                                    <span className="text-white-600 bg-green-600 rounded-full px-4 p-2 rounded mr-3"> 
+In Stock
 <span className="rounded-full px-4 bg-white text-bkack p-2 rounded"> 2 </span>
-In Stock</span>
+</span>
                                 </div>
                             </div>
                             <div className="mb-4">
