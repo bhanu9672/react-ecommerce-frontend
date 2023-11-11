@@ -1,8 +1,8 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import Logo from "../logo.png"
-
+import { removeItem } from "../store/slices/cartSlice";
 import { Fragment, useState } from 'react'
 import { Disclosure, Menu, Transition, Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
@@ -53,6 +53,7 @@ const Nav = () => {
 		navigate("/login")
 	}
 	const [open, setOpen] = useState(false)
+	const dispatch = useDispatch();
 	const carts = useSelector((state) => state.cart.cartItems)
 	console.log( carts )
 	return (
@@ -70,7 +71,6 @@ const Nav = () => {
 					>
 						<div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
 					</Transition.Child>
-
 					<div className="fixed inset-0 overflow-hidden">
 						<div className="absolute inset-0 overflow-hidden">
 							<div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
@@ -100,7 +100,6 @@ const Nav = () => {
 														</button>
 													</div>
 												</div>
-
 												<div className="mt-8">
 													<div className="flow-root">
 														<ul role="list" className="-my-6 divide-y divide-gray-200">
@@ -108,8 +107,8 @@ const Nav = () => {
 																<li key={product.id} className="flex py-6">
 																	<div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
 																		<img
-																			src={product.imageSrc}
-																			alt={product.imageAlt}
+																			src={product.img}
+																			alt={product.name}
 																			className="h-full w-full object-cover object-center"
 																		/>
 																	</div>
@@ -125,10 +124,10 @@ const Nav = () => {
 																		</div>
 																		<div className="flex flex-1 items-end justify-between text-sm">
 																			<p className="text-gray-500">Qty {product.quantity}</p>
-
 																			<div className="flex">
 																				<button
 																					type="button"
+																					onClick={ () => dispatch( removeItem(product._id) ) }
 																					className="font-medium text-indigo-600 hover:text-indigo-500"
 																				>
 																					Remove
