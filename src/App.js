@@ -9,13 +9,11 @@ import Wishlist from './pages/Wishlist';
 
 import Nav from "./Components/Nav";
 import Footer from './Components/Footer';
-
 import AddProduct from './Components/AddProduct';
 import ProductLists from "./Components/ProductLists";
 import UpdateProduct from './Components/UpdateProduct';
 import Store from './Components/Store';
 import SingleProduct from './Components/SingleProduct';
-import Cart from './Components/Cart';
 import Checkout from './Components/Checkout';
 import Profile from './Components/Profile';
 import Order from './Components/Order';
@@ -36,7 +34,6 @@ function App() {
 					<Route path='/wishlist' element={<Wishlist />} />
 					<Route path='/product/:id' element={<SingleProduct />} />
 					<Route path='/update/:id' element={<UpdateProduct />} />
-					<Route path='/cart' element={<Cart />} />
 					<Route path='/add' element={<AddProduct />} />
 					<Route path='/checkout' element={<Checkout />} />
 					<Route path='/profile' element={<Profile />} />
