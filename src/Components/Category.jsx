@@ -9,7 +9,7 @@ const Category = () => {
 
   return (
     <>
-      <section className="pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] dark:bg-dark">
+      <section className="p-10 dark:bg-dark">
         <div className="container mx-auto">
           <div className="flex flex-wrap -mx-4">
             <div className="w-full px-4">
