@@ -5,7 +5,7 @@ import { Accordion } from 'flowbite-react';
 
 function Faq() {
     return (
-        <div className='max-w-screen-xl mx-auto px-5 bg-white min-h-sceen'>
+        <div className='max-w-screen-xl mx-auto p-5 bg-white min-h-sceen'>
             <div className="container mx-auto">
                 <div className="-mx-4 flex flex-wrap">
                     <div className="w-full px-4">
