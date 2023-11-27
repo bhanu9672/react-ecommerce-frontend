@@ -1,6 +1,4 @@
-
 'use client';
-
 import { Accordion } from 'flowbite-react';
 
 function Faq() {
