@@ -214,7 +214,7 @@ const PortfolioCard = ({
 
 
 
-        
+        {/*
           <div className="overflow-hidden rounded-[10px]">
             <img src={ImageHref} alt="portfolio" className="w-full" />
           </div>
@@ -230,6 +230,9 @@ const PortfolioCard = ({
               {button}
             </a>
           </div>
+*/}
+
+
         </div>
       </div>
     </>
