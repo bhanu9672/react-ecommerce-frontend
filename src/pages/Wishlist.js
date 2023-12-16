@@ -10,7 +10,7 @@ const Wishlist = () => {
 						My Wishlists
 					</h1>
 				</div>
-				<div className="flex flex-wrap -mx-4">
+				<div className="flex flex-wrap -mx-4 mb-5">
 					<div className="w-full px-4">
 						<div className="max-w-full overflow-x-auto">
 							<table className="w-full table-auto">
