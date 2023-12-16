@@ -166,7 +166,7 @@ const PortfolioCard = ({
             : "hidden"
         }`}
       >
-
+<div className="relative mb-12">
 
 
 
@@ -214,7 +214,7 @@ const PortfolioCard = ({
 
 
 
-        <div className="relative mb-12">
+        
           <div className="overflow-hidden rounded-[10px]">
             <img src={ImageHref} alt="portfolio" className="w-full" />
           </div>
