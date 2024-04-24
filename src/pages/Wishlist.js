@@ -1,7 +1,56 @@
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux'
 
 const Wishlist = () => {
+	const wishlists = useSelector( (state) => state)
+	console.log(wishlists)
 
+	// const WishlistProduct = wishlists.length > 0 && wishlists.map(function (product) {
+	// 	if (product.img) {
+	// 		const blob = new Blob([Int8Array.from(product.img.data.data)], { type: product.img.contentType });
+	// 		var image = window.URL.createObjectURL(blob);
+	// 	}
+	// 	return (
+	// 		<>
+	// 			<li key={product.id} className="flex py-6">
+	// 				<div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+	// 					{
+	// 						product.img &&
+	// 						<img
+	// 							src={image}
+	// 							alt="Product"
+	// 							className="h-full w-full object-cover object-center"
+	// 						/>
+	// 					}
+	// 				</div>
+	// 				<div className="ml-4 flex flex-1 flex-col">
+	// 					<div>
+	// 						<div className="flex justify-between text-base font-medium text-gray-900">
+	// 							<h3>
+	// 								<a href={product.href}>{product.name}</a>
+	// 							</h3>
+	// 							<p className="ml-4">{product.price}</p>
+	// 						</div>
+	// 						<p className="mt-1 text-sm text-gray-500">{product.color}</p>
+	// 					</div>
+	// 					<div className="flex flex-1 items-end justify-between text-sm">
+	// 						<p className="text-gray-500">Qty {product.quantity}</p>
+	// 						<div className="flex">
+	// 							<button
+	// 								type="button"
+	// 								//onClick={() => dispatch(removeItem(product._id))}
+	// 								className="font-medium text-indigo-600 hover:text-indigo-500"
+	// 							>
+	// 								Remove
+	// 							</button>
+	// 						</div>
+	// 					</div>
+	// 				</div>
+	// 			</li>
+	// 		</>
+	// 	);
+	// })
+	//console.log(carts)
 	return (
 		<section className="bg-white">
 			<div className="container mx-auto">
@@ -10,6 +59,9 @@ const Wishlist = () => {
 						My Wishlists
 					</h1>
 				</div>
+				{
+					//WishlistProduct
+				}
 				<div className="flex flex-wrap -mx-4 mb-5">
 					<div className="w-full px-4">
 						<div className="max-w-full overflow-x-auto">

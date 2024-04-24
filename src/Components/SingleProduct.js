@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { addItem } from '../store/slices/cartSlice';
+import { addToWishlistItem } from "../store/slices/wishlistSlice"
 
 const SingleProduct = () => {
 
@@ -8,9 +11,19 @@ const SingleProduct = () => {
     const [category, setCategory] = useState('');
     const [company, setCompany] = useState('');
     const [picture, setPicture] = useState({});
+    const [ products, setProducts ] = useState([]);
     const params = useParams();
     const local_url = "http://localhost:5000";
     const live_url = "https://node-ecommerce-backend.vercel.app";
+
+    const dispatch = useDispatch();
+	const handleAddToCart = item => {
+		dispatch(addItem(item));
+	};
+
+    const handleAddToWishlist = item => {
+		dispatch(addToWishlistItem(item));
+	};
 
     useEffect(() => {
         getProductDertails();
@@ -19,6 +32,7 @@ const SingleProduct = () => {
     const getProductDertails = async () => {
         let result = await fetch(`${live_url}/product/${params.id}`);
         result = await result.json();
+        setProducts(result);
         setName(result.name);
         setPrice(result.price);
         setCategory(result.category);
@@ -103,12 +117,18 @@ const SingleProduct = () => {
                             </div>
                             <div className="flex -mx-2 mb-4 pt-8">
                                 <div className="w-1/2 px-2">
-                                    <button className="w-full bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700">
+                                    <button 
+                                    className="w-full bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700"
+                                    onClick={() => handleAddToCart(products)}
+                                    >
                                         Add to Cart
                                     </button>
                                 </div>
                                 <div className="w-1/2 px-2">
-                                    <button className="w-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600">
+                                    <button 
+                                    className="w-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600"
+                                    onClick={() => handleAddToWishlist(products)}
+                                    >
                                         Add to Wishlist
                                     </button>
                                 </div>
