@@ -7,6 +7,7 @@ import { Fragment, useState } from 'react'
 import { Disclosure, Menu, Transition, Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { AiOutlineHeart } from "react-icons/ai";
+import { LuUserCircle2 } from "react-icons/lu";
 
 const navigation = [
 	{ name: 'Home', href: '/', current: true },
@@ -22,6 +23,8 @@ function classNames(...classes) {
 }
 
 const Nav = () => {
+	const auth = localStorage.getItem('user');
+	console.log(auth)
 	const navigate = useNavigate();
 	const LogOut = () => {
 		localStorage.clear();
@@ -32,7 +35,7 @@ const Nav = () => {
 	const carts = useSelector((state) => state.cart.cartItems)
 	const wishlist = useSelector((state) => state.Wishlist.wishlistItems)
 	console.log(wishlist)
-	
+
 	const ProductsList = carts.length > 0 && carts.map(function (product) {
 		if (product.img) {
 			const blob = new Blob([Int8Array.from(product.img.data.data)], { type: product.img.contentType });
@@ -235,63 +238,22 @@ const Nav = () => {
 											{wishlist.length}
 										</span>
 									</Link>
-									{/* Profile dropdown */}
-									<Menu as="div" className="relative ml-3">
-										<div>
-											<Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-												<span className="absolute -inset-1.5" />
-												<span className="sr-only">Open user menu</span>
-												<img
-													className="h-8 w-8 rounded-full"
-													src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-													alt=""
-												/>
-											</Menu.Button>
-										</div>
-										<Transition
-											as={Fragment}
-											enter="transition ease-out duration-100"
-											enterFrom="transform opacity-0 scale-95"
-											enterTo="transform opacity-100 scale-100"
-											leave="transition ease-in duration-75"
-											leaveFrom="transform opacity-100 scale-100"
-											leaveTo="transform opacity-0 scale-95"
-										>
-											<Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-												<Menu.Item>
-													{({ active }) => (
-														<Link
-															to="/profile"
-															className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-														>
-															Your Profile
-														</Link>
-													)}
-												</Menu.Item>
-												<Menu.Item>
-													{({ active }) => (
-														<Link
-															to="#"
-															className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-														>
-															Settings
-														</Link>
-													)}
-												</Menu.Item>
-												<Menu.Item>
-													{({ active }) => (
-														<Link
-															to="/login"
-															onClick={LogOut}
-															className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-														>
-															LogOut
-														</Link>
-													)}
-												</Menu.Item>
-											</Menu.Items>
-										</Transition>
-									</Menu>
+									{
+										auth ?
+											<Link
+												to='/profile'
+												className="relative flex rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+											>
+												<LuUserCircle2 size={30} />
+											</Link>
+											:
+											<Link
+												to='/login'
+												className="relative flex rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+											>
+												<LuUserCircle2 size={30} />
+											</Link>
+									}
 								</div>
 							</div>
 						</div>
