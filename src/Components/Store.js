@@ -374,7 +374,7 @@ const Store = () => {
 
 								{/* Product grid */}
 								<div className="lg:col-span-3">
-									<section id="Projects" class="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5">
+									<section id="Projects" className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5">
 										{/* Your content */}
 										{
 											products.length > 0 ?
