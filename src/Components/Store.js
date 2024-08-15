@@ -86,7 +86,8 @@ const Store = () => {
 	const ProductsList = products.length > 0 && products.map(function (data) {
 		if (data.img) {
 			const blob = new Blob([Int8Array.from(data.img.data.data)], { type: data.img.contentType });
-			var image = window.URL.createObjectURL(blob);
+	//		var image = window.URL.createObjectURL(blob);
+var image = `data:${data.img.contentType};${(data.img.data.toString('base64'))}`;
 		}
 		return (
 			<>
