@@ -95,14 +95,16 @@ var image = `data:${data.img.contentType};bade64,${(data.img.data.toString('base
 					className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl"
 					key={data._id}>
 					<Link to={`/product/${data._id}`}>
-						{/*
+			
+	
+{
 							data.img &&
 							<img
 								src={image}
 								alt="Product"
 								className="h-80 w-72 object-cover rounded-t-xl"
 					
-*/		/>
+		/>
 						}
 					</Link>
 					<div className="px-4 py-3 w-72">
