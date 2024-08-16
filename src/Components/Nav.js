@@ -40,6 +40,7 @@ const Nav = () => {
 		if (product.img) {
 			const blob = new Blob([Int8Array.from(product.img.data.data)], { type: product.img.contentType });
 			var image = window.URL.createObjectURL(blob);
+var image = `data:{product.img.contentType};${product.img.data.toString('base64')}`;
 		}
 		return (
 			<>
